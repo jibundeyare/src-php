@@ -73,6 +73,8 @@ $item = $conn->fetchAssoc('SELECT * FROM students WHERE id = :id', [
     'id' => $student_id,
 ]);
 
+// vérification de la présence d'un résultat
+// s'il n'y a aucun résultat, `$item` est égal à `false`
 if ($item) {
     // affichage des données de chaque colonne
     // chaque clé alpha-numérique représente une colonne de la table
