@@ -37,11 +37,21 @@
         {# affichage d'une variable sans appliquer aucun filtre (attention, peut être dangereux) #}
         <p>{{ html|raw }}</p>
 
+        {# affichage d'un nombre à virgule flottant sans formatage particulier #}
+        <p>pi : {{ pi }}</p>
+        {# affichage d'un nombre à virgule flottant avec le formatage de la configuration #}
+        <p>pi : {{ pi|number_format }}</p>
+
         {# affichage d'une date au format JJ/MM/AAAA HH:MM:SS #}
         <p>timestamp : {{ now|date('d/m/Y H:i:s') }}</p>
         {# affichage d'une date au format JJ/MM/AAAA #}
         <p>date : {{ now|date('d/m/Y') }}</p>
         {# affichage d'une date au format HH:MM:SS #}
         <p>time : {{ now|date('H:i:s') }}</p>
+
+        {# affichage d'une date dans la langue de la locale et au format `full` #}
+        <p>timestamp : {{ now|localizeddate('full', 'full') }}</p>
+        <p>date : {{ now|localizeddate('full', 'none') }}</p>
+        <p>time : {{ now|localizeddate('none', 'full') }}</p>
     </body>
 </html>
