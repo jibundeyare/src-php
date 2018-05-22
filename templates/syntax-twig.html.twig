@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {# affichage d'une variable #}
+        <title>{{ greeting }}</title>
+    </head>
+    <body>
+        {# affichage d'une variable #}
+        <h1>{{ greeting }}</h1>
+
+        <ul>
+            {# boucle sur un tableau contenant des chaînes de caractères #}
+            {% for item in items %}
+                {# affichage d'une variable #}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+            </tr>
+            {# boucle sur un tableau contenant des tableaux #}
+            {% for row in rows %}
+            <tr>
+                {# affichage de valeurs associées à des clés alphanumériques #}
+                <td>{{ row.id }}</td>
+                <td>{{ row.name }}</td>
+            <tr>
+            {% endfor %}
+        </table>
+
+        {# affichage d'une variable (avec application automatique de la fonction `htmlentities()`) #}
+        <p>{{ html }}</p>
+        {# affichage d'une variable sans appliquer aucun filtre (attention, peut être dangereux) #}
+        <p>{{ html|raw }}</p>
+
+        {# affichage d'une date au format JJ/MM/AAAA HH:MM:SS #}
+        <p>timestamp : {{ now|date('d/m/Y H:i:s') }}</p>
+        {# affichage d'une date au format JJ/MM/AAAA #}
+        <p>date : {{ now|date('d/m/Y') }}</p>
+        {# affichage d'une date au format HH:MM:SS #}
+        <p>time : {{ now|date('H:i:s') }}</p>
+    </body>
+</html>

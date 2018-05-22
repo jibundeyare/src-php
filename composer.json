@@ -1,6 +1,7 @@
 {
     "require": {
         "doctrine/dbal": "^2.7",
-        "symfony/yaml": "^3.4"
+        "symfony/yaml": "^3.4",
+        "twig/twig": "~2.0"
     }
 }
