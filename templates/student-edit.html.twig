@@ -1,0 +1,17 @@
+{# templates/student-edit.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Student edit - {{ student.firstname }} {{ student.lastname }} ({{ student.id }}){% endblock %}
+
+{% block body %}
+<form method="post">
+    <input type="text" name="firstname" value="{{ student.firstname|e('html_attr') }}" placeholder="prénom" />
+    <input type="text" name="lastname" value="{{ student.lastname|e('html_attr') }}" placeholder="nom" />
+    <select name="promotion_id">
+        {% for promotion in promotions %}
+            <option value="{{ promotion.id|e('html_attr') }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Valider</button>
+</form>
+{% endblock %}
