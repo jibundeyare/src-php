@@ -7,8 +7,8 @@ $twig = new Twig_Environment($loader);
 
 $twig->getExtension('Twig_Extension_Core')->setNumberFormat(2, ',', ' ');
 $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
-Locale::setDefault('fr-FR');
-$twig->addExtension(new Twig_Extensions_Extension_Intl());
+Locale::setDefault('fr-FR'); // @warning requiert l'extension php-intl
+$twig->addExtension(new Twig_Extensions_Extension_Intl()); // @warning requiert l'extension php-intl
 
 $greeting = 'Hello Syntax!';
 
