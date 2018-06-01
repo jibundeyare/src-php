@@ -25,7 +25,7 @@ $connectionParams = [
 // la variable `$conn` permet de communiquer avec la BDD
 $conn = DriverManager::getConnection($connectionParams, $config);
 
-// envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
+// envoi d'une requête SQL à la BDD et récupération du jeu de résultats sous la forme d'un tableau PHP dans la variable `$items`
 $items = $conn->fetchAll('SELECT * FROM students');
 
 // parcours de chacun des éléments du tableau `$items`
