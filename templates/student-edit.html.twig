@@ -4,14 +4,49 @@
 {% block title %}Student edit - {{ student.firstname }} {{ student.lastname }} ({{ student.id }}){% endblock %}
 
 {% block body %}
+{% if infos %}
+<div class="">
+    {{ infos }}
+</div>
+{% endif %}
+
 <form method="post">
-    <input type="text" name="firstname" value="{{ student.firstname|e('html_attr') }}" placeholder="prénom" />
-    <input type="text" name="lastname" value="{{ student.lastname|e('html_attr') }}" placeholder="nom" />
-    <select name="promotion_id">
-        {% for promotion in promotions %}
-            <option value="{{ promotion.id|e('html_attr') }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
-        {% endfor %}
-    </select>
-    <button type="submit">Valider</button>
+    <div class="">
+        <div class="">
+            <input type="text" name="firstname" value="{{ student.firstname|e('html_attr') }}" placeholder="prénom" /
+        </div>
+        <div class="">
+            {% if errors.firstname %}
+                {{ errors.firstname }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <div class="">
+            <input type="text" name="lastname" value="{{ student.lastname|e('html_attr') }}" placeholder="nom" />
+        </div>
+        <div class="">
+            {% if errors.lastname %}
+                {{ errors.lastname }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <div class="">
+            <select name="promotion_id">
+                {% for promotion in promotions %}
+                <option value="{{ promotion.id|e('html_attr') }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="">
+            {% if errors.promotion_id %}
+                {{ errors.promotion_id }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <button type="submit">Valider</button>
+    </div>
 </form>
 {% endblock %}

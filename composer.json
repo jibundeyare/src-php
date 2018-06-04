@@ -3,6 +3,7 @@
         "doctrine/dbal": "^2.7",
         "symfony/yaml": "^3.4",
         "twig/twig": "~2.0",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+        "symfony/var-dumper": "^4.1"
     }
 }

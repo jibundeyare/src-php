@@ -111,14 +111,16 @@ echo 'id de l\'élément inséré : '.$lastInsertId.'<br />';
 
 echo "<h2>UPDATE d'une ligne avec la méthode `update()`</h2>";
 
+$id = $lastInsertId;
 $lastname = 'Lorem';
 
 // envoi d'une requête SQL à la BDD et récupération du nombre de lignes modifiées dans la variable `$count`
 // la méthode `update()` permet d'ajouter des paramètres à la requête SQL de façon sécurisée
+// UPDATE students SET lastname = '$lastname' WHERE id = '$id'
 $count = $conn->update('students', [
     'lastname' => $lastname,
 ], [
-    'id' => $lastInsertId,
+    'id' => $id,
 ]);
 
 echo 'nombre d\'éléments modifiés : '.$count.'<br />';
@@ -151,4 +153,3 @@ $count = $conn->executeUpdate('UPDATE students SET firstname = :firstname, lastn
 ]);
 
 echo 'nombre d\'éléments modifiés : '.$count.'<br />';
-
