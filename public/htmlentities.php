@@ -1,9 +1,4 @@
 <?php
-/**
- * Cet exemple montre l'intérêt d'utiliser la fonction `htmlentities()` pour se protéger des injection de code JS.
- * La fonction `htmlentities()` doit être utilisée au moment d'afficher une variable.
- * En revanche, il faut éviter d'utiliser la fonction `htmlentities()` au moment d'enregistrer en BDD.
- */
 
 $firstname = 'Lorem';
 $lastname = 'Ipsum';
