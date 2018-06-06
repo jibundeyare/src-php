@@ -13,7 +13,7 @@ $twig = new Twig_Environment($loader);
 $greeting = 'Hello Twig!';
 
 // affichage du rendu du template
-echo $twig->render('hello-twig.html.twig', [
+echo $twig->render('twig-hello-world.html.twig', [
     // transmission de variables au template
     // la clé (à gauche) représente le nom de la variable dans le template Twig
     // la variable (à droite) est la valeur de la variable dans le template Twig

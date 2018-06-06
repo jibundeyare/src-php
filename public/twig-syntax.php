@@ -54,7 +54,7 @@ $pi = M_PI;
 $now = new DateTime();
 
 // affichage du rendu du template
-echo $twig->render('syntax-twig.html.twig', [
+echo $twig->render('twig-syntax.html.twig', [
     // transmission de variables au template
     // la clé (à gauche) représente le nom de la variable dans le template Twig
     // la variable (à droite) est la valeur de la variable dans le template Twig

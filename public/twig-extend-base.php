@@ -14,7 +14,7 @@ $title = 'Extend base twig';
 $greeting = 'Hello Extend!';
 
 // affichage du rendu du template
-echo $twig->render('extend-base-twig.html.twig', [
+echo $twig->render('twig-extend-base.html.twig', [
     // transmission de variables au template
     // la clé (à gauche) représente le nom de la variable dans le template Twig
     // la variable (à droite) est la valeur de la variable dans le template Twig
