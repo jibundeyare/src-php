@@ -1,24 +1,40 @@
-{# templates/students.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Students{% endblock %}
 
 {% block body %}
+
 <h1>Students</h1>
 
-<table class="table">
+<div>
+    <a class="btn btn-primary mt-2 mb-2" href="/student-new.php">Ajouter un student</a>
+</div>
+
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>id</th>
         <th>firstname</th>
         <th>lastname</th>
         <th>promotion</th>
+        <th>action</th>
     </tr>
     {% for student in students %}
-    <tr class="student" data-id="{{ student.id|e('html_attr') }}">
-        <td><a href="/student-edit.php?id={{ student.id|e('html_attr') }}">{{ student.id }}</a></td>
-        <td><a href="/student-edit.php?id={{ student.id|e('html_attr') }}">{{ student.firstname }}</a></td>
-        <td><a href="/student-edit.php?id={{ student.id|e('html_attr') }}">{{ student.lastname }}</a></td>
-        <td><a href="/student-edit.php?id={{ student.id|e('html_attr') }}">{{ student.name }}</a></td>
+    <tr class="student" data-id="{{ student.id }}">
+        <td>
+            <a href="/student-edit.php?id={{ student.id }}">{{ student.id }}</a>
+        </td>
+        <td>
+            <a href="/student-edit.php?id={{ student.id }}">{{ student.firstname }}</a>
+        </td>
+        <td>
+            <a href="/student-edit.php?id={{ student.id }}">{{ student.lastname }}</a>
+        </td>
+        <td>
+            <a href="/student-edit.php?id={{ student.id }}">{{ student.name }}</a>
+        </td>
+        <td>
+            <a class="btn btn-outline-danger delete-link" href="/student-delete.php?id={{ student.id }}">supprimer</a>
+        </td>
     </tr>
     {% endfor %}
 </table>

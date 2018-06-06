@@ -97,6 +97,7 @@ $promotionId = 4;
 
 // envoi d'une requête SQL à la BDD et récupération du nombre de lignes insérées dans la variable `$count`
 // la méthode `insert()` permet d'ajouter des paramètres à la requête SQL de façon sécurisée
+// requête SQL générée : `INSERT INTO students (firstname, lastname, promotion_id) VALUES ('$firstname', '$lastname', '$promotionId')`
 $count = $conn->insert('students', [
     'firstname' => $firstname,
     'lastname' => $lastname,
@@ -116,7 +117,7 @@ $lastname = 'Lorem';
 
 // envoi d'une requête SQL à la BDD et récupération du nombre de lignes modifiées dans la variable `$count`
 // la méthode `update()` permet d'ajouter des paramètres à la requête SQL de façon sécurisée
-// UPDATE students SET lastname = '$lastname' WHERE id = '$id'
+// requête SQL générée : `UPDATE students SET lastname = '$lastname' WHERE id = '$id'`
 $count = $conn->update('students', [
     'lastname' => $lastname,
 ], [
@@ -131,6 +132,7 @@ $id = $lastInsertId;
 
 // envoi d'une requête SQL à la BDD et récupération du nombre de lignes modifiées dans la variable `$count`
 // la méthode `delete()` permet d'ajouter des paramètres à la requête SQL de façon sécurisée
+// requête SQL générée : `DELETE FROM students WHERE id = '$id'`
 $count = $conn->delete('students', [
     'id' => $id,
 ]);
