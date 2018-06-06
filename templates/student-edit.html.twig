@@ -13,7 +13,7 @@
 <form method="post">
     <div class="">
         <div class="">
-            <input type="text" name="firstname" value="{{ student.firstname|e('html_attr') }}" placeholder="prénom" /
+            <input type="text" name="firstname" value="{{ student.firstname }}" placeholder="prénom" />
         </div>
         <div class="">
             {% if errors.firstname %}
@@ -23,7 +23,7 @@
     </div>
     <div class="">
         <div class="">
-            <input type="text" name="lastname" value="{{ student.lastname|e('html_attr') }}" placeholder="nom" />
+            <input type="text" name="lastname" value="{{ student.lastname }}" placeholder="nom" />
         </div>
         <div class="">
             {% if errors.lastname %}
@@ -35,7 +35,7 @@
         <div class="">
             <select name="promotion_id">
                 {% for promotion in promotions %}
-                <option value="{{ promotion.id|e('html_attr') }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
+                <option value="{{ promotion.id }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
                 {% endfor %}
             </select>
         </div>
