@@ -31,7 +31,9 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
 // initialisation du moteur de template Twig
 $twig = new Twig_Environment($loader);
 
+// l'id est récupéré depuis l'URL en GET
 // affectation de l'id en utilisant l'opérateur ternaire
+// si l'id est vide, on affecte la valeur 0
 $id = !empty($_GET['id']) ? $_GET['id'] : 0;
 
 // l'utilisation de l'opérateur ternaire remplace le bloc de code suivant
