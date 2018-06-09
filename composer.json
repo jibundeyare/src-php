@@ -1,9 +1,9 @@
 {
     "require": {
-        "doctrine/dbal": "^2.7",
+        "doctrine/dbal": "^2.0",
         "symfony/yaml": "^3.4",
         "twig/twig": "~2.0",
         "twig/extensions": "^1.5",
-        "symfony/var-dumper": "^4.1"
+        "symfony/var-dumper": "^3.4"
     }
 }
