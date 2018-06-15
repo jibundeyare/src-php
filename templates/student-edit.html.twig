@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Student edit - {{ student.firstname }} {{ student.lastname }} ({{ student.id }}){% endblock %}
+{% block title %}Modifier un Student - {{ student.firstname }} {{ student.lastname }} ({{ student.id }}){% endblock %}
 
 {% block body %}
+<h1>Modifier un Student - {{ student.firstname }} {{ student.lastname }} ({{ student.id }})</h1>
+
+<div>
+    <a class="btn btn-primary mt-2 mb-2" href="/students.php">Revenir à la liste des Students</a>
+</div>
+
 {% if infos %}
 <div class="">
     {{ infos }}
