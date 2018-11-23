@@ -155,3 +155,4 @@ $count = $conn->executeUpdate('UPDATE students SET firstname = :firstname, lastn
 ]);
 
 echo 'nombre d\'éléments modifiés : '.$count.'<br />';
+

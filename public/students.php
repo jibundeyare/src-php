@@ -41,3 +41,4 @@ echo $twig->render('students.html.twig', [
     // la variable (à droite) est la valeur de la variable dans le template Twig
     'students' => $students,
 ]);
+

@@ -119,3 +119,4 @@ echo $twig->render('student-edit.html.twig', [
     'infos' => $infos,
     'errors' => $errors,
 ]);
+

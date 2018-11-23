@@ -21,3 +21,4 @@ echo $twig->render('twig-extend-base.html.twig', [
     'title' => $title,
     'greeting' => $greeting,
 ]);
+

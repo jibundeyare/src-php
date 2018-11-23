@@ -19,3 +19,4 @@ echo $twig->render('twig-hello-world.html.twig', [
     // la variable (à droite) est la valeur de la variable dans le template Twig
     'greeting' => $greeting,
 ]);
+
