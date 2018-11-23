@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Student{% endblock %}
+
+{% block body %}
+<h1>Ajouter un Student</h1>
+
+<div>
+    <a class="btn btn-primary mt-2 mb-2" href="/students.php">Revenir à la liste des Students</a>
+</div>
+
+{% if infos %}
+<div class="">
+    {{ infos }}
+</div>
+{% endif %}
+
+<form method="post">
+    <div class="">
+        <div class="">
+            <input type="text" name="firstname" value="{{ student.firstname }}" placeholder="prénom" />
+        </div>
+        <div class="">
+            {% if errors.firstname %}
+                {{ errors.firstname }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <div class="">
+            <input type="text" name="lastname" value="{{ student.lastname }}" placeholder="nom" />
+        </div>
+        <div class="">
+            {% if errors.lastname %}
+                {{ errors.lastname }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <div class="">
+            <select name="promotion_id">
+                <option value="" {% if student.promotion_id == 0 %}selected{% endif %} disabled>promotion</option>
+                {% for promotion in promotions %}
+                <option value="{{ promotion.id }}" {% if student.promotion_id == promotion.id %}selected{% endif %}>{{ promotion.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="">
+            {% if errors.promotion_id %}
+                {{ errors.promotion_id }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="">
+        <button class="btn btn-success" type="submit">Valider</button>
+    </div>
+</form>
+{% endblock %}
