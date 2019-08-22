@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h1>{{ title }}</h1>
+
+{% if error %}
+<p>
+  {{ error }}<br />
+</p>
+{% endif %}
+
+<p>
+  Vous avez parié : {{ bet }}<br />
+  Le tirage donne : {{ side }}<br />
+  L'issue : {{ outcome }}<br />
+</p>
+
+{% endblock %}
+

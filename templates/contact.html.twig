@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>{{ title }}</h1>
+
+      {% if messageSent %}
+      <div class="alert alert-success" role="alert">
+        Votre message a été envoyé
+      </div>
+      {% endif %}
+
+      <form method="post">
+        <div class="form-group">
+          <label for="email">email *</label>
+          <input type="email" class="form-control {% if errors.email is defined %}is-invalid{% endif %}" id="email" name="email" placeholder="votre email" value="{{ data.email }}">
+          {% if errors.email is defined %}
+          <div class="invalid-feedback">
+            {{ errors.email }}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="subject">objet *</label>
+          <input type="text" class="form-control {% if errors.subject is defined %}is-invalid{% endif %}" id="subject" name="subject" placeholder="objet du mail" value="{{ data.subject }}">
+          {% if errors.subject is defined %}
+          <div class="invalid-feedback">
+            {{ errors.subject }}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="message">message *</label>
+          <textarea class="form-control {% if errors.message is defined %}is-invalid{% endif %}" id="message" name="message" rows="5" placeholder="votre message">{{ data.message }}</textarea>
+          {% if errors.message is defined %}
+          <div class="invalid-feedback">
+            {{ errors.message }}
+          </div>
+          {% endif %}
+        </div>
+        <p>
+          <em><small>Les champs marqués d'une étoile * sont obligatoires</small></em>
+        </p>
+        {% if not messageSent %}
+        <button type="submit" class="btn btn-primary">envoyer</button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

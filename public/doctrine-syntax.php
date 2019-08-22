@@ -1,10 +1,12 @@
 <?php
 
+// @todo externaliser la config de la BDD
+
 // déclaration des classes PHP qui seront utilisées
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
 
-// activation de la fonction autoloading de Composer
+// activation du système d'autoloading de Composer
 require __DIR__.'/../vendor/autoload.php';
 
 // création d'une variable avec une configuration par défaut

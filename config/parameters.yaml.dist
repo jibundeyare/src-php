@@ -1,0 +1,9 @@
+email:
+  server: 'smtp.gmail.com'
+  port: 587
+  transport: 'tls'
+  sendTo: ~
+  password: ~
+  subjectPrefix: '[contact] '
+  messagePrefix: 'De '
+

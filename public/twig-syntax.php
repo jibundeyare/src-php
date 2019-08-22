@@ -1,6 +1,6 @@
 <?php
 
-// activation de la fonction autoloading de Composer
+// activation du système d'autoloading de Composer
 require __DIR__.'/../vendor/autoload.php';
 
 // configuration du moteur de template Twig
